@@ -1,0 +1,32 @@
+name: Verify data tools
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  synthetic-tests:
+    name: Standard-library tests (${{ matrix.os }}, Python ${{ matrix.python }})
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ["3.10", "3.12"]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check manifest without downloading release assets
+        run: python scripts/verify_data.py --manifest-only
+      - name: Run small synthetic files and local HTTP fixtures
+        run: python -m unittest discover -s scripts -p "test_data_tools.py" -v
+      - name: Check CLI entry points
+        run: |
+          python scripts/download_data.py --help
+          python scripts/verify_data.py --help

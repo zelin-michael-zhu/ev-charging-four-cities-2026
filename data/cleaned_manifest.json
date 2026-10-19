@@ -1,0 +1,1057 @@
+{
+  "data_version": "2026-10-19-derived-v1",
+  "prepared_at_utc": "2026-10-19T10:55:31.885202+00:00",
+  "derivative_preparer": "zelin-michael-zhu",
+  "upstream": {
+    "title": "A spatiotemporal dataset of electric vehicle charging station utilization in four major Chinese cities",
+    "citation": "ruotao, Yu (2026). A spatiotemporal dataset of electric vehicle charging station utilization in four major Chinese cities. figshare. Dataset. https://doi.org/10.6084/m9.figshare.32917595.v1",
+    "doi": "10.6084/m9.figshare.32917595.v1",
+    "url": "https://doi.org/10.6084/m9.figshare.32917595.v1",
+    "github": "https://github.com/yuruotao/chongqing_charging_data",
+    "published_date": "2026-07-08",
+    "license": "CC BY 4.0",
+    "license_url": "https://creativecommons.org/licenses/by/4.0/",
+    "original_archive_bytes": 4547739657,
+    "original_archive_md5": "1b7d7f2ba81f3b9d1b06d4d77a6533d9"
+  },
+  "derivative_description": "Independent 2026-10-19 cleaned rectangular panels and quality masks, retaining upstream authorship and data license. Original-value station metadata restricted to an explicit public station-field allowlist.",
+  "window_local": {
+    "start_inclusive": "2026-01-29T00:00:00+08:00",
+    "end_exclusive": "2026-03-03T00:00:00+08:00",
+    "timezone": "Asia/Shanghai",
+    "expected_hours": 792
+  },
+  "total_catalog_station_ids": 38934,
+  "total_rectangular_station_hours": 30835728,
+  "total_domain_valid_rows": 21888704,
+  "total_strict_public_valid_rows": 17998928,
+  "no_interpolation": true,
+  "masked_values_retained_in_rectangular_files": true,
+  "quality_rule_source_sha256": "978e3c0cb4bc6e428ee1fa19308388a6926331fbd613d85531badbb0d21e3413",
+  "counts_for_report_source_sha256": "570aeb15406a8508083c7d34b0375f4be165da3c1efe8613d4ec72fd4d0a49b5",
+  "mask_bits": {
+    "domain_invalid_bits": 95,
+    "basic_invalid_bits": 4607,
+    "strict_invalid_bits": 12799
+  },
+  "quality_flags": {
+    "missing_snapshot_or_station": 1,
+    "numeric_missing_or_noninteger": 2,
+    "negative_count": 4,
+    "zero_capacity": 8,
+    "count_exceeds_capacity": 16,
+    "closed_or_private_status": 32,
+    "capture_unparseable": 64,
+    "capture_clock_mismatch": 128,
+    "repeated_capture_timestamp": 256,
+    "frozen_state_48h": 512,
+    "capacity_changed": 1024,
+    "identical_nonconstant_trace_candidate": 2048,
+    "bulk_reporting_failure": 4096,
+    "occupied_plus_available_less_than_capacity": 8192,
+    "repaired_csv_record": 16384,
+    "duplicate_station_hour": 32768
+  },
+  "cities": [
+    {
+      "city": "beijing",
+      "filename": "cleaned-beijing.tar.gz",
+      "bytes": 85184271,
+      "sha256": "fb97f76a935ff46943b89bb4a53b858bbd64c8c6b402346f21fde5b80371a7ea",
+      "format": "tar.gz",
+      "compression": "gzip level 1; deterministic zero mtime; root-level files",
+      "files": [
+        {
+          "path": "panel.npz",
+          "bytes": 69178951,
+          "sha256": "eaadebe5a1d763ac84e59331aee6e07d9407b2a8fca50280c82e258741619677",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "panel.parquet",
+          "bytes": 22676548,
+          "sha256": "8090108be5fe2d0dba7699e3cc2ff6bd6d310ff7639f3af3089ca6addf4fa27b",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_quality.parquet",
+          "bytes": 303139,
+          "sha256": "93a438ec8d8014b807a0a513f3fe30b09e1e4c4ce3b90b18cecfb905278d9de3",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_meta.csv",
+          "bytes": 2021126,
+          "sha256": "6716ed005bb517cb0870f2ca7bdb73595e348fd22e5951db8faf744c9592a27c",
+          "content": "UTF-8 original-value metadata subset from station_meta.parquet",
+          "columns": [
+            "station_id",
+            "name",
+            "latitude",
+            "longitude",
+            "ac_pile_count",
+            "dc_pile_count",
+            "city",
+            "coordinate_reference_system"
+          ]
+        }
+      ],
+      "catalog_station_ids": 9068,
+      "expected_hours": 792,
+      "rectangular_station_hours": 7181856,
+      "observed_snapshot_hours": 759,
+      "missing_snapshot_hours": 33,
+      "domain_valid_rows": 5038641,
+      "strict_public_valid_rows": 4070648,
+      "strict_public_valid_coverage_of_full_grid": 0.5667961039597563,
+      "any_strict_valid_station_ids": 5605,
+      "basic_and_strict_masks_elementwise_equal": true,
+      "mask_bit_checks_passed": true,
+      "npz_schema": [
+        {
+          "name": "station_ids",
+          "dtype": "<U24",
+          "shape": [
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "time_slots",
+          "dtype": "<U25",
+          "shape": [
+            792
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupancy_rate",
+          "dtype": "float32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "basic_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "strict_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "available",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capture_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "source_update_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "quality_flags",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "frozen_state_run_hours",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        },
+        {
+          "name": "domain_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            9068
+          ],
+          "order": "C"
+        }
+      ],
+      "panel_parquet_rows": 7181856,
+      "panel_parquet_schema": "station_id: string\ntime_slot: timestamp[us, tz=Asia/Shanghai]\nvalid: bool\nbasic_valid: bool\noccupied: int32\navailable: int32\ncapacity: int32\noccupancy_rate: float\ncapture_time: int64\nquality_flags: uint16",
+      "station_quality_rows": 9068,
+      "station_quality_schema": "station_id: string\nbasic_valid_hours: int64\nstrict_valid_hours: int64\nbasic_coverage: double\nstrict_coverage: double\nlongest_basic_valid_run_hours: uint16\nlongest_strict_valid_run_hours: uint16\nlongest_identical_state_run_hours: uint16\ncapacity_change_events: int64\nrepeated_capture_timestamps: int64\nconstant_occupied_trace: bool",
+      "station_metadata_columns": [
+        "station_id",
+        "name",
+        "latitude",
+        "longitude",
+        "ac_pile_count",
+        "dc_pile_count",
+        "city",
+        "coordinate_reference_system"
+      ],
+      "station_metadata_excluded_source_columns": [
+        "address",
+        "tel",
+        "show_tag",
+        "overall_rating",
+        "overall_rating_src",
+        "ac_pile_power",
+        "parking_fee",
+        "charging_fee",
+        "electricity_price",
+        "baidu_update_time",
+        "dc_pile_power",
+        "business_hours",
+        "service_fee",
+        "operator",
+        "operator_type"
+      ],
+      "selected_metadata_credential_pattern_hits": 0,
+      "archive_members_verified_against_file_hashes": true
+    },
+    {
+      "city": "shanghai",
+      "filename": "cleaned-shanghai.tar.gz",
+      "bytes": 140741071,
+      "sha256": "41ada556124173a2780b4040c56e8241367f0bca79abec857036d17968d90789",
+      "format": "tar.gz",
+      "compression": "gzip level 1; deterministic zero mtime; root-level files",
+      "files": [
+        {
+          "path": "panel.npz",
+          "bytes": 107400799,
+          "sha256": "5d2b06b11101f50e60e7b7c6cc026b21bf1363cd195d9ed1bfcffa0011f7789d",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "panel.parquet",
+          "bytes": 42840184,
+          "sha256": "8c9327a13358067a554273665175d449c272fe0e4b8446f5637a66f5d3925900",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_quality.parquet",
+          "bytes": 434426,
+          "sha256": "d3a179d9fc5db5d64cf2015d12b38c51dbb5265757130d22f1ccfdb03a536832",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_meta.csv",
+          "bytes": 2969754,
+          "sha256": "50a832b979072ca2961a9a147d4fa868eb6b7ac752df8a0ac80f81edcb2e2f12",
+          "content": "UTF-8 original-value metadata subset from station_meta.parquet",
+          "columns": [
+            "station_id",
+            "name",
+            "latitude",
+            "longitude",
+            "ac_pile_count",
+            "dc_pile_count",
+            "city",
+            "coordinate_reference_system"
+          ]
+        }
+      ],
+      "catalog_station_ids": 13265,
+      "expected_hours": 792,
+      "rectangular_station_hours": 10505880,
+      "observed_snapshot_hours": 766,
+      "missing_snapshot_hours": 26,
+      "domain_valid_rows": 7371864,
+      "strict_public_valid_rows": 6095332,
+      "strict_public_valid_coverage_of_full_grid": 0.5801829070958359,
+      "any_strict_valid_station_ids": 8366,
+      "basic_and_strict_masks_elementwise_equal": true,
+      "mask_bit_checks_passed": true,
+      "npz_schema": [
+        {
+          "name": "station_ids",
+          "dtype": "<U24",
+          "shape": [
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "time_slots",
+          "dtype": "<U25",
+          "shape": [
+            792
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupancy_rate",
+          "dtype": "float32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "basic_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "domain_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "strict_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "available",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capture_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "source_update_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "quality_flags",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        },
+        {
+          "name": "frozen_state_run_hours",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            13265
+          ],
+          "order": "C"
+        }
+      ],
+      "panel_parquet_rows": 10505880,
+      "panel_parquet_schema": "station_id: string\ntime_slot: timestamp[us, tz=Asia/Shanghai]\nvalid: bool\nbasic_valid: bool\noccupied: int32\navailable: int32\ncapacity: int32\noccupancy_rate: float\ncapture_time: int64\nquality_flags: uint16",
+      "station_quality_rows": 13265,
+      "station_quality_schema": "station_id: string\nbasic_valid_hours: int64\nstrict_valid_hours: int64\nbasic_coverage: double\nstrict_coverage: double\nlongest_basic_valid_run_hours: uint16\nlongest_strict_valid_run_hours: uint16\nlongest_identical_state_run_hours: uint16\ncapacity_change_events: int64\nrepeated_capture_timestamps: int64\nconstant_occupied_trace: bool",
+      "station_metadata_columns": [
+        "station_id",
+        "name",
+        "latitude",
+        "longitude",
+        "ac_pile_count",
+        "dc_pile_count",
+        "city",
+        "coordinate_reference_system"
+      ],
+      "station_metadata_excluded_source_columns": [
+        "address",
+        "tel",
+        "show_tag",
+        "overall_rating",
+        "overall_rating_src",
+        "ac_pile_power",
+        "parking_fee",
+        "charging_fee",
+        "electricity_price",
+        "baidu_update_time",
+        "dc_pile_power",
+        "business_hours",
+        "service_fee",
+        "operator",
+        "operator_type"
+      ],
+      "selected_metadata_credential_pattern_hits": 0,
+      "archive_members_verified_against_file_hashes": true
+    },
+    {
+      "city": "shenzhen",
+      "filename": "cleaned-shenzhen.tar.gz",
+      "bytes": 90243493,
+      "sha256": "2256b622fec10c8f7ba750abcfec1194dab0408ce290a6e869e6974ce8277717",
+      "format": "tar.gz",
+      "compression": "gzip level 1; deterministic zero mtime; root-level files",
+      "files": [
+        {
+          "path": "panel.npz",
+          "bytes": 73414360,
+          "sha256": "c75f1039ee7ea36e596443da1866b8977ac99f9638e63ff3338f0d70164962e8",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "panel.parquet",
+          "bytes": 24205019,
+          "sha256": "2ed1328b494e5f853b7994716aeaab204e0629b23fc9c164934594b18f7df985",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_quality.parquet",
+          "bytes": 273093,
+          "sha256": "fb7604d84188429a484d56204d02d3402c344dd10a12788000aa8218d3b311b1",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_meta.csv",
+          "bytes": 1861293,
+          "sha256": "a0133ad32f1f6558cbbe08af52102d7143c2ca46c41c4ad3a1c645dc4ca465b0",
+          "content": "UTF-8 original-value metadata subset from station_meta.parquet",
+          "columns": [
+            "station_id",
+            "name",
+            "latitude",
+            "longitude",
+            "ac_pile_count",
+            "dc_pile_count",
+            "city",
+            "coordinate_reference_system"
+          ]
+        }
+      ],
+      "catalog_station_ids": 8484,
+      "expected_hours": 792,
+      "rectangular_station_hours": 6719328,
+      "observed_snapshot_hours": 765,
+      "missing_snapshot_hours": 27,
+      "domain_valid_rows": 4813939,
+      "strict_public_valid_rows": 3574573,
+      "strict_public_valid_coverage_of_full_grid": 0.5319837043228133,
+      "any_strict_valid_station_ids": 4874,
+      "basic_and_strict_masks_elementwise_equal": true,
+      "mask_bit_checks_passed": true,
+      "npz_schema": [
+        {
+          "name": "station_ids",
+          "dtype": "<U24",
+          "shape": [
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "time_slots",
+          "dtype": "<U25",
+          "shape": [
+            792
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupancy_rate",
+          "dtype": "float32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "basic_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "domain_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "strict_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "available",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capture_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "source_update_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "quality_flags",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        },
+        {
+          "name": "frozen_state_run_hours",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            8484
+          ],
+          "order": "C"
+        }
+      ],
+      "panel_parquet_rows": 6719328,
+      "panel_parquet_schema": "station_id: string\ntime_slot: timestamp[us, tz=Asia/Shanghai]\nvalid: bool\nbasic_valid: bool\noccupied: int32\navailable: int32\ncapacity: int32\noccupancy_rate: float\ncapture_time: int64\nquality_flags: uint16",
+      "station_quality_rows": 8484,
+      "station_quality_schema": "station_id: string\nbasic_valid_hours: int64\nstrict_valid_hours: int64\nbasic_coverage: double\nstrict_coverage: double\nlongest_basic_valid_run_hours: uint16\nlongest_strict_valid_run_hours: uint16\nlongest_identical_state_run_hours: uint16\ncapacity_change_events: int64\nrepeated_capture_timestamps: int64\nconstant_occupied_trace: bool",
+      "station_metadata_columns": [
+        "station_id",
+        "name",
+        "latitude",
+        "longitude",
+        "ac_pile_count",
+        "dc_pile_count",
+        "city",
+        "coordinate_reference_system"
+      ],
+      "station_metadata_excluded_source_columns": [
+        "address",
+        "tel",
+        "show_tag",
+        "overall_rating",
+        "overall_rating_src",
+        "ac_pile_power",
+        "parking_fee",
+        "charging_fee",
+        "electricity_price",
+        "baidu_update_time",
+        "dc_pile_power",
+        "business_hours",
+        "service_fee",
+        "operator",
+        "operator_type"
+      ],
+      "selected_metadata_credential_pattern_hits": 0,
+      "archive_members_verified_against_file_hashes": true
+    },
+    {
+      "city": "chongqing",
+      "filename": "cleaned-chongqing.tar.gz",
+      "bytes": 76007106,
+      "sha256": "1fcb43f63a3406708a6be168867838ac87729ba5264438565a0ceda9a6e61b43",
+      "format": "tar.gz",
+      "compression": "gzip level 1; deterministic zero mtime; root-level files",
+      "files": [
+        {
+          "path": "panel.npz",
+          "bytes": 49835983,
+          "sha256": "28e6665543551595c93b8a7ebc838610c36af4431366c1342a3561533e254a9e",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "panel.parquet",
+          "bytes": 29569904,
+          "sha256": "637d285ec8eeeb839dd25c1e0b1ba8897dbaa634e1a2f5939352f2b2dacee339",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_quality.parquet",
+          "bytes": 281676,
+          "sha256": "3571a6a89da0cce8f5c2dd6e8875840f94d83f6a6f4cc22591e17afa1e4739cd",
+          "content": "unchanged audited cleaned file"
+        },
+        {
+          "path": "station_meta.csv",
+          "bytes": 1830678,
+          "sha256": "9b91535c93196a337707949c72a10235becdd60a946c186ff66c1279ece3a471",
+          "content": "UTF-8 original-value metadata subset from station_meta.parquet",
+          "columns": [
+            "station_id",
+            "name",
+            "latitude",
+            "longitude",
+            "ac_pile_count",
+            "dc_pile_count",
+            "city",
+            "coordinate_reference_system"
+          ]
+        }
+      ],
+      "catalog_station_ids": 8117,
+      "expected_hours": 792,
+      "rectangular_station_hours": 6428664,
+      "observed_snapshot_hours": 765,
+      "missing_snapshot_hours": 27,
+      "domain_valid_rows": 4664260,
+      "strict_public_valid_rows": 4258375,
+      "strict_public_valid_coverage_of_full_grid": 0.662404350266245,
+      "any_strict_valid_station_ids": 5851,
+      "basic_and_strict_masks_elementwise_equal": true,
+      "mask_bit_checks_passed": true,
+      "npz_schema": [
+        {
+          "name": "station_ids",
+          "dtype": "<U24",
+          "shape": [
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "time_slots",
+          "dtype": "<U25",
+          "shape": [
+            792
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupancy_rate",
+          "dtype": "float32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "basic_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "domain_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "strict_valid",
+          "dtype": "bool",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "available",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "capture_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "source_update_time",
+          "dtype": "int64",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "quality_flags",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_capacity",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "ac_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "dc_occupied",
+          "dtype": "int32",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        },
+        {
+          "name": "frozen_state_run_hours",
+          "dtype": "uint16",
+          "shape": [
+            792,
+            8117
+          ],
+          "order": "C"
+        }
+      ],
+      "panel_parquet_rows": 6428664,
+      "panel_parquet_schema": "station_id: string\ntime_slot: timestamp[us, tz=Asia/Shanghai]\nvalid: bool\nbasic_valid: bool\noccupied: int32\navailable: int32\ncapacity: int32\noccupancy_rate: float\ncapture_time: int64\nquality_flags: uint16",
+      "station_quality_rows": 8117,
+      "station_quality_schema": "station_id: string\nbasic_valid_hours: int64\nstrict_valid_hours: int64\nbasic_coverage: double\nstrict_coverage: double\nlongest_basic_valid_run_hours: uint16\nlongest_strict_valid_run_hours: uint16\nlongest_identical_state_run_hours: uint16\ncapacity_change_events: int64\nrepeated_capture_timestamps: int64\nconstant_occupied_trace: bool",
+      "station_metadata_columns": [
+        "station_id",
+        "name",
+        "latitude",
+        "longitude",
+        "ac_pile_count",
+        "dc_pile_count",
+        "city",
+        "coordinate_reference_system"
+      ],
+      "station_metadata_excluded_source_columns": [
+        "address",
+        "tel",
+        "show_tag",
+        "overall_rating",
+        "overall_rating_src",
+        "ac_pile_power",
+        "parking_fee",
+        "charging_fee",
+        "electricity_price",
+        "baidu_update_time",
+        "dc_pile_power",
+        "business_hours",
+        "service_fee",
+        "operator",
+        "operator_type"
+      ],
+      "selected_metadata_credential_pattern_hits": 0,
+      "archive_members_verified_against_file_hashes": true
+    }
+  ]
+}

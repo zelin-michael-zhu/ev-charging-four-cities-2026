@@ -1,0 +1,36 @@
+{
+  "title": "<b>A spatiotemporal dataset of electric vehicle charging station utilization in four major Chinese cities</b>",
+  "doi": "10.6084/m9.figshare.32917595.v1",
+  "published_date": "2026-07-08T05:05:42Z",
+  "modified_date": "2026-07-08T05:05:43Z",
+  "license": {
+    "value": 1,
+    "name": "CC BY 4.0",
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "authors": [
+    {
+      "id": 17936984,
+      "full_name": "Yu ruotao",
+      "first_name": "Yu",
+      "last_name": "ruotao",
+      "is_active": true,
+      "url_name": "Yu_ruotao",
+      "orcid_id": "0009-0005-4887-2339"
+    }
+  ],
+  "url_public_html": "https://figshare.com/articles/dataset/_b_A_spatiotemporal_dataset_of_electric_vehicle_charging_station_utilization_in_four_major_Chinese_cities_b_/32917595",
+  "files": [
+    {
+      "id": 66387119,
+      "name": "data.zip",
+      "size": 4547739657,
+      "is_link_only": false,
+      "download_url": "https://ndownloader.figshare.com/files/66387119",
+      "supplied_md5": "1b7d7f2ba81f3b9d1b06d4d77a6533d9",
+      "computed_md5": "1b7d7f2ba81f3b9d1b06d4d77a6533d9",
+      "mimetype": "application/zip"
+    }
+  ],
+  "mirror_verified_date": "2026-10-19"
+}

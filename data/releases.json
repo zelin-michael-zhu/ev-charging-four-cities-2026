@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "release_tag": "v1.0.0",
+  "repository": "zelin-michael-zhu/ev-charging-four-cities-2026",
+  "published_derivative_date": "2026-10-19",
+  "data_license": "CC-BY-4.0",
+  "source_doi": "10.6084/m9.figshare.32917595.v1",
+  "raw": {
+    "filename": "data.zip",
+    "bytes": 4547739657,
+    "sha256": "43cc0ce420d1e8b8b9557e4387a68a86da11c338287c599f52129bda5e3888c5",
+    "md5": "1b7d7f2ba81f3b9d1b06d4d77a6533d9",
+    "parts": [
+      {
+        "filename": "data.zip.part01",
+        "bytes": 1500000000,
+        "sha256": "2903bb757deab38c804d0bb86309df1b306ef180b5d66278b7a99dc9967fcde7",
+        "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/data.zip.part01"
+      },
+      {
+        "filename": "data.zip.part02",
+        "bytes": 1500000000,
+        "sha256": "07dc4745e438adf17f57db27a33913a1c9b16f2e3db3377b79f06778882b5e41",
+        "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/data.zip.part02"
+      },
+      {
+        "filename": "data.zip.part03",
+        "bytes": 1500000000,
+        "sha256": "12caa2e3e9580316bb84e9b25d333cc6cde8659b9fe05729e7dc4cc612d17399",
+        "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/data.zip.part03"
+      },
+      {
+        "filename": "data.zip.part04",
+        "bytes": 47739657,
+        "sha256": "2bcb4e1763defa16083ef687fe0f29430e5564430922f1fc79629c6ed92e30f6",
+        "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/data.zip.part04"
+      }
+    ],
+    "upstream_download_url": "https://ndownloader.figshare.com/files/66387119",
+    "source_doi": "10.6084/m9.figshare.32917595.v1",
+    "license": "CC-BY-4.0"
+  },
+  "cleaned": [
+    {
+      "city": "beijing",
+      "filename": "cleaned-beijing.tar.gz",
+      "bytes": 85184271,
+      "sha256": "fb97f76a935ff46943b89bb4a53b858bbd64c8c6b402346f21fde5b80371a7ea",
+      "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/cleaned-beijing.tar.gz"
+    },
+    {
+      "city": "shanghai",
+      "filename": "cleaned-shanghai.tar.gz",
+      "bytes": 140741071,
+      "sha256": "41ada556124173a2780b4040c56e8241367f0bca79abec857036d17968d90789",
+      "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/cleaned-shanghai.tar.gz"
+    },
+    {
+      "city": "shenzhen",
+      "filename": "cleaned-shenzhen.tar.gz",
+      "bytes": 90243493,
+      "sha256": "2256b622fec10c8f7ba750abcfec1194dab0408ce290a6e869e6974ce8277717",
+      "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/cleaned-shenzhen.tar.gz"
+    },
+    {
+      "city": "chongqing",
+      "filename": "cleaned-chongqing.tar.gz",
+      "bytes": 76007106,
+      "sha256": "1fcb43f63a3406708a6be168867838ac87729ba5264438565a0ceda9a6e61b43",
+      "url": "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026/releases/download/v1.0.0/cleaned-chongqing.tar.gz"
+    }
+  ]
+}

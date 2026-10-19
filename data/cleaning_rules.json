@@ -1,0 +1,69 @@
+{
+  "frozen_before_any_prediction": true,
+  "main_window_local": [
+    "2026-01-29T00:00:00+08:00",
+    "2026-03-03T00:00:00+08:00"
+  ],
+  "timezone": "Asia/Shanghai (UTC+08:00); timestamps have no source timezone marker",
+  "time_grid": "filename hour; each row has capture_time in UTC epoch seconds. An h:00 slot is a collection-round index, not an instantaneous h:00 observation.",
+  "cutoff_rule": "For any training cutoff also require capture_time <= cutoff_epoch; derive hour/day calendar features from actual capture_time.",
+  "domain_only": "UID exists in source CS_meta; six counts finite nonnegative integers; capacity>0; occupied+available<=capacity per AC/DC; capture parses. Raw file metric basic_valid refers to this domain-only check.",
+  "basic": "Same causal clock, status, repeated-capture and bulk-failure rules as strict; relax only occupied+available==capacity to <=capacity. No interpolation.",
+  "strict": "basic plus not explicitly closed/private/in-construction, |capture_time-filename_exact_time|<=90 minutes, exclude subsequent identical capture timestamps per station, require occupied+available==capacity separately for AC/DC, and exclude an hour if >=95% station reports have all six counts zero and positive-capacity fraction is <=10% of the first observed official-window snapshot positive-capacity fraction (known at t0).",
+  "occupancy_rate": "computed for domain_valid, eligibility chosen separately by valid/basic_valid; no label imputation",
+  "public_cohort_exclusion": "Closed/private status defines the public-cohort scope and is not proof of faulty numeric telemetry; blank/unknown status remains eligible.",
+  "frozen": "Unchanged six-count state across consecutive basic-valid collection hours is flagged at 24/48/72h, not automatically removed from basic/strict. Constant legitimate low-demand sites remain valid.",
+  "source_update": "Baidu update time is audited but semantics are not proved to represent charging telemetry freshness; no automatic label deletion based solely on this metadata clock.",
+  "sensitivity": {
+    "capture_clock_minutes": [
+      30,
+      60,
+      90,
+      120
+    ],
+    "bulk_all_zero_fraction": [
+      0.9,
+      0.95,
+      0.99
+    ],
+    "unchanged_state_run_hours": [
+      24,
+      48,
+      72
+    ],
+    "station_valid_coverage": [
+      0.8,
+      0.9,
+      0.95
+    ],
+    "minimum_contiguous_valid_hours": [
+      24,
+      72,
+      168
+    ]
+  },
+  "quality_flags": {
+    "missing_snapshot_or_station": 1,
+    "numeric_missing_or_noninteger": 2,
+    "negative_count": 4,
+    "zero_capacity": 8,
+    "count_exceeds_capacity": 16,
+    "closed_or_private_status": 32,
+    "capture_unparseable": 64,
+    "capture_clock_mismatch": 128,
+    "repeated_capture_timestamp": 256,
+    "frozen_state_48h": 512,
+    "capacity_changed": 1024,
+    "identical_nonconstant_trace_candidate": 2048,
+    "bulk_reporting_failure": 4096,
+    "occupied_plus_available_less_than_capacity": 8192,
+    "repaired_csv_record": 16384,
+    "duplicate_station_hour": 32768
+  },
+  "domain_invalid_bits": 95,
+  "basic_invalid_bits": 4607,
+  "strict_invalid_bits": 12799,
+  "bulk_failure_reference": "First observed official-window snapshot positive-capacity fraction (known at t0); never a full-period median.",
+  "clock_sensitivity_reference": "Exact filename time including minutes/seconds, matching primary rule",
+  "closed_or_private_status_regex": "暂停|不对外|关闭|搬迁|在建|停业|未开放|未营业|停止|内部"
+}

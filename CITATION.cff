@@ -1,0 +1,22 @@
+cff-version: 1.2.0
+message: "Please cite the original Figshare dataset first, and identify this independently cleaned derivative by release tag and checksum."
+title: "Four-city EV charging data 2026: unofficial mirror and cleaned derivative"
+type: dataset
+version: 1.0.0
+date-released: 2026-10-19
+license: CC-BY-4.0
+url: "https://github.com/zelin-michael-zhu/ev-charging-four-cities-2026"
+authors:
+  - name: "zelin-michael-zhu (mirror and derivative maintainer)"
+preferred-citation:
+  type: data
+  title: "A spatiotemporal dataset of electric vehicle charging station utilization in four major Chinese cities"
+  authors:
+    - family-names: "ruotao"
+      given-names: "Yu"
+      orcid: "https://orcid.org/0009-0005-4887-2339"
+  year: 2026
+  version: "1"
+  doi: "10.6084/m9.figshare.32917595.v1"
+  publisher:
+    name: "Figshare"
